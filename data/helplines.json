@@ -1,26 +1,28 @@
-{
-  "project": "safe-helpline-india",
-  "country": "India",
-  "lastUpdated": "2026-06-26",
-  "disclaimer": "This dataset is for public safety awareness only. In an emergency, contact official emergency services directly.",
-  "helplines": [
-    {
-      "id": "india-erss-112",
-      "name": "Emergency Response Support System",
-      "number": "112",
-      "type": "emergency",
-      "available": "24x7",
-      "description": "Nationwide single emergency number for reporting and addressing emergencies across India.",
-      "source": "https://www.mha.gov.in/en/commoncontent/emergency-response-support-system-erss"
-    },
-    {
-      "id": "india-women-helpline-181",
-      "name": "Women Helpline",
-      "number": "181",
-      "type": "women_safety",
-      "available": "24x7",
-      "description": "Emergency and non-emergency response for women through telephonic short-code 181.",
-      "source": "https://www.myscheme.gov.in/schemes/whl-181"
-    }
-  ]
-}
+[
+  {
+    "id": "erss-112",
+    "name": "Emergency Response Support System (ERSS)",
+    "number": "112",
+    "category": "Emergency",
+    "country": "IN",
+    "availability": "24x7",
+    "description": "India's unified emergency number for reporting emergencies. ERSS is designed to route actionable distress calls to the appropriate emergency services, including police, health, fire, disaster, women and children helpline systems.",
+    "sourceUrl": "https://www.mha.gov.in/en/commoncontent/emergency-response-support-system-erss",
+    "sourceName": "Ministry of Home Affairs, Government of India",
+    "lastVerified": "2026-06-26",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "women-helpline-181",
+    "name": "Women Helpline",
+    "number": "181",
+    "category": "Women Safety",
+    "country": "IN",
+    "availability": "24x7",
+    "description": "Women Helpline provides emergency and non-emergency response through telephonic short-code 181 for women, including referral to appropriate authorities and information about women-related government schemes and support services.",
+    "sourceUrl": "https://www.myscheme.gov.in/schemes/whl-181",
+    "sourceName": "myScheme, Government of India",
+    "lastVerified": "2026-06-26",
+    "verificationStatus": "verified"
+  }
+]

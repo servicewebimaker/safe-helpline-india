@@ -1,103 +1,140 @@
 # Safe Helpline India
 
-Privacy-first open-source emergency and women-safety helpline toolkit for India.
+Safe Helpline India is a privacy-first open-source toolkit for verified emergency and women-safety helpline information in India.
 
-## About
+The project is intentionally small at launch. It includes only helplines that have been verified from official or public source URLs. It does not claim government affiliation, does not dispatch help, and does not collect personal information.
 
-Safe Helpline India is an open-source project focused on making verified emergency and women-safety helpline information easier to access for people in India.
+## Verified Helplines
 
-The goal is to provide a simple toolkit that websites, NGOs, schools, communities, and developers can use to display important safety information quickly and responsibly.
+| Helpline | Number | Category | Source |
+| --- | --- | --- | --- |
+| Emergency Response Support System (ERSS) | 112 | Emergency | [Ministry of Home Affairs, Government of India](https://www.mha.gov.in/en/commoncontent/emergency-response-support-system-erss) |
+| Women Helpline | 181 | Women Safety | [myScheme, Government of India](https://www.myscheme.gov.in/schemes/whl-181) |
 
-## Why this project matters
+Last project verification date: 2026-06-26.
 
-In emergency situations, people need fast access to trusted helpline information. This project aims to make that information easier to find, easier to embed, and easier to maintain as an open-source public safety resource.
+## Features
 
-## Planned features
+- React, TypeScript, and Vite web app.
+- Kotlin and Jetpack Compose Android app.
+- Shared TypeScript core package with validation helpers.
+- Static `data/helplines.json` and `data/sources.json`.
+- Lightweight embeddable JavaScript widget.
+- Click-to-call links that open the user device dialer.
+- Search and category filtering for Emergency and Women Safety entries.
+- Clear safety, privacy, source, and contribution documentation.
+- Offline-first architecture with no backend requirement.
 
-* Verified emergency helpline information for India
-* Quick access guidance for 112 emergency response
-* Women safety helpline information, including 181
-* Privacy-first design with no unnecessary personal data collection
-* Simple website widget for NGOs, schools, blogs, and community websites
-* Developer-friendly JSON data format
-* Multilingual documentation support
-* Accessibility-focused user interface
-* Open contribution model for verified updates
+## Monorepo Layout
 
-## Current status
+```text
+apps/
+  web/        React + TypeScript + Vite app
+  android/    Kotlin + Jetpack Compose app
+packages/
+  core/       Shared helpline types, data helpers, and validation
+data/         Verified JSON data and source register
+docs/         Data, privacy, safety, and roadmap docs
+widget/       Dependency-free embeddable widget
+```
 
-This project is in early active development.
+## Web App Setup
 
-The first goal is to build a reliable public dataset and a simple embeddable widget that can help Indian websites share emergency and women-safety helpline information.
+Requirements:
 
-## Intended users
+- Node.js 20 or newer.
+- npm.
 
-* NGOs and community organizations
-* Schools and colleges
-* Local safety awareness projects
-* Developers building public safety tools
-* Websites that want to display verified emergency help information
+```bash
+npm install
+npm run dev
+```
 
-## Project principles
+The development server runs the web app from `apps/web`.
 
-* Privacy-first
-* Open-source
-* Simple to use
-* Easy to verify
-* Accessible
-* Community-maintained
-* India-focused
+Useful commands:
 
-## Roadmap
+```bash
+npm run lint
+npm run test
+npm run build
+```
 
-### Phase 1
+## Android App Setup
 
-* Create the public repository
-* Add documentation
-* Add verified helpline data structure
-* Add basic website demo
-* Add contribution guidelines
+Requirements:
 
-### Phase 2
+- Android Studio.
+- Android SDK with API 35 available.
+- JDK 17.
 
-* Build embeddable website widget
-* Add multilingual support
-* Add accessibility improvements
-* Add state-wise safety resources
+Open `apps/android` in Android Studio, let Gradle sync, and run the `app` configuration.
 
-### Phase 3
+If Gradle is installed locally, you can also run:
 
-* Prepare npm package
-* Add documentation website
-* Invite public contributors
-* Improve verification workflow
+```bash
+cd apps/android
+gradle :app:assembleDebug
+```
 
-## Official reference areas
+The Android app uses bundled verified helpline data and does not request location, contacts, SMS, camera, microphone, or storage permissions.
 
-This project is designed around publicly available safety information such as:
+## Widget Usage
 
-* 112 emergency response information
-* 181 women helpline information
-* State and national public safety resources
-* Verified government and public service references
+```html
+<div id="safe-helpline-widget"></div>
+<script src="./safe-helpline-widget.js"></script>
+```
+
+The widget is dependency-free and makes no tracking, cookie, local storage, or analytics calls.
+
+## Data Verification Policy
+
+Only verified entries are accepted. Each helpline must include:
+
+- Official or public source URL.
+- Source owner or publisher.
+- Helpline number.
+- Category.
+- Country.
+- Availability.
+- Description grounded in the source.
+- Last verification date.
+
+Unverified state-wise or local data is not included. See [docs/DATA_VERIFICATION.md](docs/DATA_VERIFICATION.md).
+
+## Privacy Principles
+
+- No accounts.
+- No tracking.
+- No cookies.
+- No contact collection.
+- No location collection.
+- No auto-call or auto-SMS behavior.
+- Dialer opens only after a user action.
+
+See [docs/PRIVACY.md](docs/PRIVACY.md).
+
+## Safety Disclaimer
+
+This project is an independent information directory. It does not dispatch responders and is not a substitute for emergency services, local authorities, trained support workers, or a personal safety plan.
+
+In immediate danger, use the phone dialer and local emergency services. See [docs/SAFETY.md](docs/SAFETY.md).
 
 ## Contributing
 
-Contributions are welcome.
+Contributions are welcome when they preserve the privacy-first and verification-first posture of the project. Start with [CONTRIBUTING.md](CONTRIBUTING.md), then run:
 
-You can help by:
+```bash
+npm run lint
+npm run test
+npm run build
+```
 
-* Improving documentation
-* Suggesting verified helpline updates
-* Improving accessibility
-* Translating content
-* Reporting outdated information
-* Reviewing safety-related content carefully
+## Roadmap
 
-## Maintainer
-
-Maintained by Sourav Dutta.
+See [docs/ROADMAP.md](docs/ROADMAP.md) for realistic next steps, including accessibility audits, stronger data review workflows, Android tests, localization, and carefully verified future data expansion.
 
 ## License
 
-This project is licensed under the MIT License.
+MIT. See [LICENSE](LICENSE).
